@@ -7,16 +7,16 @@ var orm = {
             console.log(result);
         });
     },
-    insertOne: function (table, burger_name) {
-        var queryString = "INSERT ? INTO ??";
-        connection.query(queryString, [burger_name, table], function (err, result) {
+    insertOne: function (table, variable, value) {
+        var queryString = "INSERT INTO ?? (? = ?)";
+        connection.query(queryString, [table, variable, value], function (err, result) {
             if (err) throw err;
             console.log(result);
         });
     },
-    updateOne: function (table, keyChange, valueChange, keyWhere, valueWhere) {
+    updateOne: function (table, varToUpdate, valueToUpdate, varWhere, valueWhere) {
         var queryString = "UPDATE ?? SET ? = ? WHERE ? = ?";
-        connection.query(queryString, [table, keyChange, valueChange, keyWhere, valueWhere], function (err, result) {
+        connection.query(queryString, [table, varToUpdate, valueToUpdate, varWhere, valueWhere], function (err, result) {
             if (err) throw err;
             console.log(result);
         });
