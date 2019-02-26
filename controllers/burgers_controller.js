@@ -5,17 +5,16 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 // ROUTES
-// Gets all burger data for index page
+// GET all burger data for index page
 router.get("/", function(req, res){
     burger.all(function(data){
-        var handlebarsObj = {
-            // SET HB NAME TO "burgers"
+        var hbObj = {
             burgers: data
         };
-        console.log(handlebarsObj);
-        res.render("index", handlebarsObj);
+        console.log(hbObj);
+        res.render("index", hbObj);
     });
 });
-// posts new burger
-// put (update) burger to devoured
+// POST new burger
+// PUT (update) burger to devoured
 module.exports = router;
