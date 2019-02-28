@@ -14,7 +14,7 @@ var burger =
         })
     },
     devourBurger: function (burgerId, cb) {
-        orm.updateOne("burgers", "devoured", "true", "id", burgerId, function (res) {
+        orm.updateOne("burgers", "devoured", 1, burgerId, function (res) {
             cb(res)
         })
     },
