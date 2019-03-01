@@ -5,7 +5,7 @@
             <form class="burger-form">
                 <label for="newB">Create a New Burger!</label>
                 <input type="text" name="new-burger" id="newB">
-                <button type="submit" id="submitBurg">Add Burger</button>
+                <button type="submit" id="submitBurg" class = "button is-dark">Add Burger</button>
             </form>
         </div>
     </div>
@@ -17,7 +17,7 @@
                 <div>
                     <h3>Burger: {{this.burger_name}}</h3>
                 </div>
-                <button class="devour" data-id="{{this.id}}">
+                <button class="devour button is-danger" data-id="{{this.id}}">
                     DEVOUR
                 </button>
                 {{/unless}}
